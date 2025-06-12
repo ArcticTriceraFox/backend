@@ -1,22 +1,22 @@
 const express  = require('express');
 const app = express();
 require('dotenv').config();
-const {DBconnection} = require('./databse/db');
+const {DBconnection} = require('./src/databse/db');
 const mongoose = require('mongoose');
-const user = require('./Models/user');
+const user = require('./src/Models/user');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const AuthRouter = require('./Routes/AuthRouter');
-const { generateFile } = require('./generateFile');
+const AuthRouter = require('./src/Routes/AuthRouter');
+const { generateFile } = require('./src/generateFile');
 DBconnection();
-const { executeCpp } = require('./ExecuteCpp');
+const { executeCpp } = require('./src/ExecuteCpp');
 const PORT = process.env.PORT || 8080;
-const problemRoutes = require('./Routes/problemRoutes');
-const problemSetRoutes = require('./Routes/problemSetRoutes');
-const submissionRoutes = require('./Routes/submissionRoutes');
-const { executePython } = require("./ExecutePython");
-const { executeJava } = require("./ExecuteJava");
-const { aiCodeReview } = require('./aiCodeReview');
+const problemRoutes = require('./src/Routes/problemRoutes');
+const problemSetRoutes = require('./src/Routes/problemSetRoutes');
+const submissionRoutes = require('./src/Routes/submissionRoutes');
+const { executePython } = require("./src/ExecutePython");
+const { executeJava } = require("./src/ExecuteJava");
+const { aiCodeReview } = require('./src/aiCodeReview');
 // const corsOptions = {
 //   origin: "https://www.codemaster69.in", // Change to your frontend domain in production
 //   credentials: true,
